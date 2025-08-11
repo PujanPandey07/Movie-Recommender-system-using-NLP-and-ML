@@ -1,31 +1,41 @@
-# Movie-Recommender-system-using-NLP-and-ML
-# 🎥 Advanced Movie Recommendation System
+# 🎬 Hybrid Content-Based Movie Recommendation System with Sentiment-Aware Re-Ranking
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.0%2B-orange)
-![NLTK](https://img.shields.io/badge/NLTK-3.7-yellowgreen)
-![License](https://img.shields.io/badge/License-MIT-brightgreen)
+This project is a **hybrid content-based movie recommender system** that calculates similarity across **plot, genre, metadata, and user reviews**, then re-ranks the top recommendations based on **audience sentiment** from user reviews.
 
-A hybrid recommendation engine combining **content-based filtering** with **sentiment-aware reranking** for personalized movie suggestions.
+Unlike traditional recommenders that only use plot or genre similarity, our system:
+- Extracts **semantic embeddings** of plot and reviews using **Sentence-BERT**.
+- Computes **genre similarity** with **Jaccard Similarity**.
+- Processes **cast, crew, and keywords** using **TF-IDF**.
+- Combines similarities using **weighted sum**.
+- Enhances recommendations by incorporating **Logistic Regression sentiment classification** for re-ranking.
 
-## 🔍 Overview
-This system recommends movies using:
-1. **Weighted fusion** of:
-   - Plot similarity (S-BERT + Cosine similarity)
-   - Metadata similarity (genres/directors)
-   - Review text similarity
-2. **Sentiment-based reranking** of top candidates from sentiments of User Reviews
-3. 
+---
 
-## 🚀 Key Features
-- **Multi-dimensional similarity analysis**
-- ## Weighted fusion of various similarity aspects
-- **Sentiment-powered reranking** (VADER/TextBlob)
-- **Modular design** for easy experimentation
-- **Cold-start capable** (no user history required)
+## 🚀 Features
+- Hybrid similarity calculation using:
+  - **SBERT** embeddings for plot and reviews
+  - **TF-IDF** for metadata
+  - **Jaccard** for genre
+- Sentiment analysis using **Logistic Regression**
+- Re-ranking with **0.8 similarity weight** and **0.2 sentiment score**
+- Customizable top-k results
+- Supports **TMDB API** for fetching movie metadata
+- Streamlit/Flask UI for easy interaction
 
-## 📦 Installation
+---
+
+## 📊 Example Output
+
+| Query Movie  | Recommended Movie  | Similarity | Sentiment | Final Score |
+|--------------|--------------------|------------|-----------|-------------|
+| Inception    | Minority Report    | 0.499      | 0.981     | 0.596       |
+| Spider-Man   | Spider-Man 2       | 0.693      | 0.982     | 0.751       |
+
+---
+
+## 🛠️ Installation & Setup
+
+1. **Clone the repository**
 ```bash
 git clone https://github.com/yourusername/movie-recommender.git
 cd movie-recommender
-pip install -r requirements.txt
