@@ -12,7 +12,7 @@ Unlike traditional recommenders that only use plot or genre similarity, our syst
 ---
 
 ## 🚀 Features
-- Hybrid similarity calculation using:
+- Hybrid similarity calculation:
   - **SBERT** embeddings for plot and reviews
   - **TF-IDF** for metadata
   - **Jaccard** for genre
@@ -22,14 +22,8 @@ Unlike traditional recommenders that only use plot or genre similarity, our syst
 - Supports **TMDB API** for fetching movie metadata
 - Streamlit/Flask UI for easy interaction
 
----
 
-## 📊 Example Output
 
-| Query Movie  | Recommended Movie  | Similarity | Sentiment | Final Score |
-|--------------|--------------------|------------|-----------|-------------|
-| Inception    | Minority Report    | 0.499      | 0.981     | 0.596       |
-| Spider-Man   | Spider-Man 2       | 0.693      | 0.982     | 0.751       |
 
 ---
 
