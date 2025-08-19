@@ -27,9 +27,4 @@ Unlike traditional recommenders that only use plot or genre similarity, our syst
 
 ---
 
-## 🛠️ Installation & Setup
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/movie-recommender.git
-cd movie-recommender
